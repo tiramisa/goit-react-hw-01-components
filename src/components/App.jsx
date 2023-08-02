@@ -5,6 +5,9 @@ import GetStatistics from './Statistics'
 import data from './data.json'
 import FriendList from './FriendList';
 import friends from './friends.json';
+import TransactionHistory from '../TransactionHistory';
+import transactions from './transactions.json';
+
 
 const profileStyles = {
   display: 'flex',
@@ -24,6 +27,7 @@ export const App = () => {
       />
       <GetStatistics title="Upload stats" stats={data} />
       <FriendList friends={friends} />
+      <TransactionHistory items={transactions} />;
     </div>
   );
 };
