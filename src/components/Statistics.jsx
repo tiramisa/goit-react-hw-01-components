@@ -1,31 +1,30 @@
 import React, { useState } from 'react';
 
-const Statistics = () => {
-  const statisticsStyles = {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    height: '200px',
-    width: '500px',
-    backgroundColor: '#f3f6f9',
-    borderRadius: '8px',
-    overflow: 'hidden',
-    paddingTop: '50px',
-    cursor: 'pointer',
-    transition: 'box-shadow 0.3s', 
-    boxShadow: '0 9px 10px rgba(0, 0, 0, 0.2), 9px 0 10px rgba(0, 0, 0, 0.2)',
-  };
+const statisticsStyles = {
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  height: '200px',
+  width: '500px',
+  backgroundColor: '#f3f6f9',
+  borderRadius: '8px',
+  overflow: 'hidden',
+  paddingTop: '50px',
+  cursor: 'pointer',
+  transition: 'box-shadow 0.3s',
+  boxShadow: '0 9px 10px rgba(0, 0, 0, 0.2), 9px 0 10px rgba(0, 0, 0, 0.2)',
+};
 
-  const colors = ['#70b7cf', '#ba70cf', '#f25a5a', '#5a6ef2']; 
+const colors = ['#70b7cf', '#ba70cf', '#f25a5a', '#5a6ef2'];
 
-  const itemStyles = {
-    color: 'black',
-    listStyle: 'none',
-    width: '500px',
-    display: 'flex',
-    justifyContent: 'center', 
-  };
+const itemStyles = {
+  color: 'black',
+  listStyle: 'none',
+  width: '500px',
+  display: 'flex',
+  justifyContent: 'center',
+};
 
   const listItemStyles = {
     textAlign: 'center',
@@ -36,6 +35,10 @@ const Statistics = () => {
     transition: 'box-shadow 0.3s',
   };
 
+
+
+export default function GetStatistics({ title }) {
+  
   const [isHovered, setIsHovered] = useState(null);
 
   const handleHover = (index) => {
@@ -43,11 +46,11 @@ const Statistics = () => {
   };
 
   return (
-    <div 
+    <div
       style={{ ...statisticsStyles, backgroundColor: isHovered !== null ? '#ccc' : '#f3f6f9', boxShadow: isHovered !== null ? '0 9px 20px rgba(0, 0, 0, 0.4), 9px 0 20px rgba(0, 0, 0, 0.4)' : '0 9px 10px rgba(0, 0, 0, 0.2), 9px 0 10px rgba(0, 0, 0, 0.2)' }}
       className="statistics"
     >
-      <h2 className="title">Upload stats</h2>
+      {title ? <h2 className="title">{title}</h2> : null}
 
       <ul style={itemStyles} className="stat-list">
         {colors.map((color, index) => (
@@ -65,6 +68,4 @@ const Statistics = () => {
       </ul>
     </div>
   );
-};
-
-export default Statistics;
+}
