@@ -1,10 +1,68 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Statistics = () => {
+  const statisticsStyles = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    height: '200px',
+    width: '500px',
+    backgroundColor: '#f3f6f9',
+    borderRadius: '8px',
+    overflow: 'hidden',
+    paddingTop: '50px',
+    cursor: 'pointer',
+    transition: 'box-shadow 0.3s', 
+    boxShadow: '0 9px 10px rgba(0, 0, 0, 0.2), 9px 0 10px rgba(0, 0, 0, 0.2)',
+  };
+
+  const colors = ['#70b7cf', '#ba70cf', '#f25a5a', '#5a6ef2']; 
+
+  const itemStyles = {
+    color: 'black',
+    listStyle: 'none',
+    width: '500px',
+    display: 'flex',
+    justifyContent: 'center', 
+  };
+
+  const listItemStyles = {
+    textAlign: 'center',
+    padding: '50px 20px',
+    backgroundColor: colors[0],
+    boxShadow: '0 9px 10px rgba(0, 0, 0, 0.2), 9px 0 10px rgba(0, 0, 0, 0.2)',
+    width: '100%',
+    transition: 'box-shadow 0.3s',
+  };
+
+  const [isHovered, setIsHovered] = useState(null);
+
+  const handleHover = (index) => {
+    setIsHovered(index);
+  };
+
   return (
-    <div className="statistics">
-      <h2>Statistics</h2>
-      {}
+    <div 
+      style={{ ...statisticsStyles, backgroundColor: isHovered !== null ? '#ccc' : '#f3f6f9', boxShadow: isHovered !== null ? '0 9px 20px rgba(0, 0, 0, 0.4), 9px 0 20px rgba(0, 0, 0, 0.4)' : '0 9px 10px rgba(0, 0, 0, 0.2), 9px 0 10px rgba(0, 0, 0, 0.2)' }}
+      className="statistics"
+    >
+      <h2 className="title">Upload stats</h2>
+
+      <ul style={itemStyles} className="stat-list">
+        {colors.map((color, index) => (
+          <div
+            key={index}
+            style={{ ...listItemStyles, backgroundColor: colors[index], boxShadow: isHovered === index ? '0 9px 20px rgba(0, 0, 0, 0.4), 9px 0 20px rgba(0, 0, 0, 0.4)' : '0 9px 10px rgba(0, 0, 0, 0.2), 9px 0 10px rgba(0, 0, 0, 0.2)' }}
+            className="item"
+            onMouseEnter={() => handleHover(index)}
+            onMouseLeave={() => handleHover(null)}
+          >
+            <span className="label">.docx</span>
+            <span className="percentage">4%</span>
+          </div>
+        ))}
+      </ul>
     </div>
   );
 };

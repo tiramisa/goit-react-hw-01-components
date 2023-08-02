@@ -1,68 +1,86 @@
-import React from 'react';
-
-const profileStyles = {
-  profile: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    border: '2px solid #ccc',
-    borderRadius: '4px',
-    boxShadow: '0 9px 10px rgba(0, 0, 9, 0.2), 9px 0 10px rgba(0, 0, 9, 0.2)',
-    margin: '144px',
-    width: '385px',
-    backgroundColor: '#fff',
-  },
-  description: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
-  avatar: {
-    borderRadius: '50%',
-    paddingBottom: '50px',
-    paddingTop: '40px',
-  },
-  name: {
-    fontSize: '18px',
-    fontWeight: 'bold',
-    paddingBottom: '15px',
-  },
-  tag: {
-    paddingBottom: '10px',
-    color: '#888',
-  },
-  location: {
-    color: '#888',
-    paddingBottom: '50px',
-  },
-  stats: {
-    listStyle: 'none',
-    alignItems: 'center',
-    backgroundColor: 'rgb(215 230 245)',
-    borderRadius: '0 0 3px 3px',
-    borderTop: '2px solid #80808050',
-    display: 'flex',
-    height: '100px',
-    width: '100%',
-    justifyContent: 'space-evenly',
-    position: 'relative',
-  },
-  label: {
-    color: 'black',
-    padding: '10px',
-    display: 'block',
-    alignItems: 'center',
-    textAlign: 'center',
-  },
-  quantity: {
-    fontWeight: 'bold',
-    paddingLeft: '15px',
-  },
-};
+import React, { useState } from 'react';
 
 const Profile = ({ username, tag, location, avatar, stats }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  const profileStyles = {
+    profile: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      border: '2px solid #ccc',
+      borderRadius: '4px',
+      boxShadow: '0 9px 10px rgba(0, 0, 9, 0.2), 9px 0 10px rgba(0, 0, 9, 0.2)',
+      margin: '144px',
+      width: '385px',
+      backgroundColor: '#fff',
+    },
+    hover: {
+      boxShadow: '0 0 15px rgba(0, 0, 0, 0.5)',
+      cursor: 'pointer',
+    },
+    description: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+    },
+    avatar: {
+      borderRadius: '50%',
+      paddingBottom: '50px',
+      paddingTop: '40px',
+    },
+    name: {
+      fontSize: '18px',
+      fontWeight: 'bold',
+      paddingBottom: '15px',
+    },
+    tag: {
+      paddingBottom: '10px',
+      color: '#888',
+    },
+    location: {
+      color: '#888',
+      paddingBottom: '50px',
+    },
+    stats: {
+      listStyle: 'none',
+      alignItems: 'center',
+      backgroundColor: 'rgb(215 230 245)',
+      borderRadius: '0 0 3px 3px',
+      borderTop: '2px solid #80808050',
+      display: 'flex',
+      height: '100px',
+      width: '100%',
+      justifyContent: 'space-evenly',
+      position: 'relative',
+    },
+    label: {
+      color: 'black',
+      padding: '10px',
+      display: 'block',
+      alignItems: 'center',
+      textAlign: 'center',
+    },
+    quantity: {
+      fontWeight: 'bold',
+      paddingLeft: '15px',
+    },
+  };
+
+  const handleHover = () => {
+    setIsHovered(!isHovered);
+  };
+
   return (
-    <div style={profileStyles.profile} className="profile">
+    <div
+      style={{
+        ...profileStyles.profile,
+        ...(isHovered && profileStyles.hover),
+      }}
+      onMouseEnter={handleHover}
+      onMouseLeave={handleHover}
+      className="profile"
+    >
       <div style={profileStyles.description} className="description">
         <img
           src={avatar}
@@ -84,7 +102,7 @@ const Profile = ({ username, tag, location, avatar, stats }) => {
       </div>
 
       <ul style={profileStyles.stats} className="stats">
-        <li>
+        <li className="profile-item">
           <span style={profileStyles.label} className="label">
             Followers
           </span>
@@ -92,7 +110,7 @@ const Profile = ({ username, tag, location, avatar, stats }) => {
             {stats.followers}
           </span>
         </li>
-        <li>
+        <li className="profile-item">
           <span style={profileStyles.label} className="label">
             Views
           </span>
@@ -100,7 +118,7 @@ const Profile = ({ username, tag, location, avatar, stats }) => {
             {stats.views}
           </span>
         </li>
-        <li>
+        <li className="profile-item">
           <span style={profileStyles.label} className="label">
             Likes
           </span>
@@ -114,3 +132,4 @@ const Profile = ({ username, tag, location, avatar, stats }) => {
 };
 
 export default Profile;
+

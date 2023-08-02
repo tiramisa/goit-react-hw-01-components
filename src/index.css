@@ -22,11 +22,11 @@ p {
   margin: 0;
 }
 
-li {
+.profile-item {
   border-left: 2px solid rgba(128, 128, 128, 0.314);
   padding: 20px;
 }
 
-li:first-child {
+.profile-item:first-child {
   border-left: none;
 }
