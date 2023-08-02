@@ -3,6 +3,8 @@ import Profile from './Profile';
 import user from './user.json';
 import GetStatistics from './Statistics'
 import data from './data.json'
+import FriendList from './FriendList';
+import friends from './friends.json';
 
 const profileStyles = {
   display: 'flex',
@@ -21,6 +23,7 @@ export const App = () => {
         stats={user.stats}
       />
       <GetStatistics title="Upload stats" stats={data} />
+      <FriendList friends={friends} />
     </div>
   );
 };
