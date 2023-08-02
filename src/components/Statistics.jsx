@@ -16,7 +16,7 @@ const statisticsStyles = {
   boxShadow: '0 9px 10px rgba(0, 0, 0, 0.2), 9px 0 10px rgba(0, 0, 0, 0.2)',
 };
 
-const colors = ['#70b7cf', '#ba70cf', '#f25a5a', '#5a6ef2'];
+const colors = ['#70b7cf', '#ba70cf', '#f25a5a', '#5a6ef2','#646a8f'];
 
 const itemStyles = {
   color: 'black',
@@ -35,10 +35,7 @@ const itemStyles = {
     transition: 'box-shadow 0.3s',
   };
 
-
-
-export default function GetStatistics({ title }) {
-  
+const GetStatistics = ({ title, stats }) => {
   const [isHovered, setIsHovered] = useState(null);
 
   const handleHover = (index) => {
@@ -47,25 +44,39 @@ export default function GetStatistics({ title }) {
 
   return (
     <div
-      style={{ ...statisticsStyles, backgroundColor: isHovered !== null ? '#ccc' : '#f3f6f9', boxShadow: isHovered !== null ? '0 9px 20px rgba(0, 0, 0, 0.4), 9px 0 20px rgba(0, 0, 0, 0.4)' : '0 9px 10px rgba(0, 0, 0, 0.2), 9px 0 10px rgba(0, 0, 0, 0.2)' }}
+      style={{
+        ...statisticsStyles,
+        backgroundColor: isHovered !== null ? '#ccc' : '#f3f6f9',
+        boxShadow: isHovered !== null
+          ? '0 9px 20px rgba(0, 0, 0, 0.4), 9px 0 20px rgba(0, 0, 0, 0.4)'
+          : '0 9px 10px rgba(0, 0, 0, 0.2), 9px 0 10px rgba(0, 0, 0, 0.2)',
+      }}
       className="statistics"
     >
-      {title ? <h2 className="title">{title}</h2> : null}
+      {title && <h2 className="title">{title}</h2>}
 
       <ul style={itemStyles} className="stat-list">
-        {colors.map((color, index) => (
+        {stats.map((stat, index) => (
           <div
             key={index}
-            style={{ ...listItemStyles, backgroundColor: colors[index], boxShadow: isHovered === index ? '0 9px 20px rgba(0, 0, 0, 0.4), 9px 0 20px rgba(0, 0, 0, 0.4)' : '0 9px 10px rgba(0, 0, 0, 0.2), 9px 0 10px rgba(0, 0, 0, 0.2)' }}
+            style={{
+              ...listItemStyles,
+              backgroundColor: colors[index],
+              boxShadow: isHovered === index
+                ? '0 9px 20px rgba(0, 0, 0, 0.4), 9px 0 20px rgba(0, 0, 0, 0.4)'
+                : '0 9px 10px rgba(0, 0, 0, 0.2), 9px 0 10px rgba(0, 0, 0, 0.2)',
+            }}
             className="item"
             onMouseEnter={() => handleHover(index)}
             onMouseLeave={() => handleHover(null)}
           >
-            <span className="label">.docx</span>
-            <span className="percentage">4%</span>
+            <span className="label">{stat.label}</span>
+            <span className="percentage">{stat.percentage}</span>
           </div>
         ))}
       </ul>
     </div>
   );
-}
+};
+
+export default GetStatistics;
