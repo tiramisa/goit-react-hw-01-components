@@ -13,6 +13,7 @@ const profileStyles = {
   display: 'flex',
     justifyContent: 'center',
   alignItems: 'center',
+  flexDirection: 'column',
 };
 
 export const App = () => {
