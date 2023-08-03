@@ -11,7 +11,7 @@ const Profile = ({ username, tag, location, avatar, stats }) => {
       border: '2px solid #ccc',
       borderRadius: '4px',
       boxShadow: '0 9px 10px rgba(0, 0, 9, 0.2), 9px 0 10px rgba(0, 0, 9, 0.2)',
-      margin: '144px',
+      margin: '20px',
       width: '385px',
       backgroundColor: '#fff',
     },

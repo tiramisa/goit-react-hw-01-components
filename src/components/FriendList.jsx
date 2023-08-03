@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 const friendListStyles = {
   listStyle: 'none',
   padding: '0',
+  margin:'20px',
 };
 
 const FriendListItem = ({ avatar, name, isOnline }) => {
@@ -17,7 +18,7 @@ const FriendListItem = ({ avatar, name, isOnline }) => {
     boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
     transition: 'box-shadow 0.3s',
     cursor: 'pointer',
-    backgroundColor: isHovered ? '#96e0dd' : '#f3f3f3', // Добавляем изменение цвета карточки при ховере
+    backgroundColor: isHovered ? '#96e0dd' : '#f3f3f3', 
   };
 
   const statusStyles = {

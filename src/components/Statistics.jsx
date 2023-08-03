@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 const statisticsStyles = {
+  margin:'20px',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
