@@ -7,6 +7,7 @@ import FriendList from './Friend/FriendList';
 import friends from '../data/friends.json';
 import TransactionHistory from './Transaction/TransactionHistory';
 import transactions from '../data/transactions.json';
+import 'modern-normalize';
 
 
 const profileStyles = {
@@ -14,7 +15,7 @@ const profileStyles = {
     justifyContent: 'center',
   alignItems: 'center',
   flexDirection: 'column',
-};
+}
 
 export const App = () => (
   <div style={profileStyles}>
@@ -27,6 +28,6 @@ export const App = () => (
     />
     <GetStatistics title="Upload stats" stats={data} />
     <FriendList friends={friends} />
-    <TransactionHistory items={transactions} />;
+    <TransactionHistory items={transactions} />
   </div>
 )

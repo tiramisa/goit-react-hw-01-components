@@ -9,8 +9,8 @@ const Profile = ({ username, tag, location, avatar, stats }) => {
           src={avatar}
           alt="User avatar"
           className="Avatar"
-          width={150}
-          height={150}
+          width={100}
+          height={100}
         />
         <p className="Name">{username}</p>
         <p className="Tag">@{tag}</p>
