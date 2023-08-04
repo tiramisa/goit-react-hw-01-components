@@ -1,0 +1,91 @@
+:root {
+  --main-bg-color: #fff;
+  --main-border-color: #ccc;
+  --text-color: #888;
+  --color-black: black;
+  --hovered-shadow-color: rgba(0, 0, 0, 0.5);
+  --stats-bg-color: rgb(215, 230, 245);
+  --stats-border-color: 2px solid hsla(0, 0%, 50%, .314);
+  --main-box-shadow: 0 9px 10px rgba(0, 0, 9, 0.2), 9px 0 10px rgba(0, 0, 9, 0.2);
+  --hovered-box-shadow: 0 0 15px var(--hovered-shadow-color);
+}
+
+.ProfileWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid var(--main-border-color);
+  border-radius: 4px;
+  box-shadow: var(--main-box-shadow);
+  margin: 20px;
+  width: 385px;
+  background-color: var(--main-bg-color);
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.ProfileWrapper:hover {
+  box-shadow: var(--hovered-box-shadow);
+}
+
+.ProfileDescription {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Avatar {
+  border-radius: 50%;
+  padding-bottom: 50px;
+  padding-top: 40px;
+}
+
+.Name {
+  font-size: 18px;
+  font-weight: bold;
+  padding-bottom: 15px;
+}
+
+.Tag {
+  padding-bottom: 10px;
+  color: var(--text-color);
+}
+
+.Location {
+  color: var(--text-color);
+  padding-bottom: 50px;
+}
+
+.StatsList {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  align-items: center;
+  background-color: var(--stats-bg-color);
+  border-radius: 0 0 3px 3px;
+  border-top: 2px solid var(--stats-border-color);
+  height: 100px;
+  width: 100%;
+  justify-content: space-evenly;
+  position: relative;
+}
+
+.StatItem {
+  border-right: var(--stats-border-color);
+  color: var(--color-black);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.StatItem:last-child {
+  border-right: none;
+}
+
+.Quantity {
+  padding: 10px;
+  font-weight: bold;
+}

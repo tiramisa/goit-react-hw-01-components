@@ -1,0 +1,81 @@
+:root {
+  --box-shadow-default: 0 9px 10px rgba(0, 0, 9, 0.2), 9px 0 10px rgba(0, 0, 9, 0.2);
+  --box-shadow-hovered: 0 9px 20px rgba(0, 0, 0, 0.4), 9px 0 20px rgba(0, 0, 0, 0.4);
+  --background-default: #f3f6f9;
+  --background-hovered: #fa9191;
+  --color-black: black;
+  --width: 500px;
+  --height: 200px;
+}
+
+.statistic-card {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--height);
+  width: var(--width);
+  background-color: var(--background-default);
+  border-radius: 8px;
+  overflow: hidden;
+  padding-top: 50px;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+  box-shadow: var(--box-shadow-default);
+}
+
+.statistic-card:hover {
+  background-color: var(--background-hovered);
+  box-shadow: var(--box-shadow-hovered);
+}
+
+.statistic-card__item {
+  display: flex;
+  color: var(--color-black);
+  list-style: none;
+  width: var(--width);
+  height: 75px;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.statistic-card__item-color-1 {
+  background-color: #70b7cf;
+}
+
+.statistic-card__item-color-2 {
+  background-color: #ba70cf;
+}
+
+.statistic-card__item-color-3 {
+  background-color: #f25a5a;
+}
+
+.statistic-card__item-color-4 {
+  background-color: #5a6ef2;
+}
+
+.statistic-card__item-color-5 {
+  background-color: #646a8f;
+}
+
+.statistic-card__item:hover {
+  background-color: var(--background-hovered);
+  box-shadow: var(--box-shadow-hovered);
+}
+
+.stat-text {
+  display: flex;
+  color: #d5d6d8;
+  font-size: 15px;
+  flex-direction: column;
+  padding-top: 10px;
+}
+
+.percentage {
+  color: #d5d6d8;
+  font-size: 20px;
+  padding: 10px;
+}
