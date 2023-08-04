@@ -4,6 +4,7 @@
   --background-default: #f3f6f9;
   --background-hovered: #fa9191;
   --color-black: black;
+  --stat-text: #d5d6d8;
   --width: 500px;
   --height: 200px;
 }
@@ -68,14 +69,14 @@
 
 .stat-text {
   display: flex;
-  color: #d5d6d8;
+  color: var(--stat-text);
   font-size: 15px;
   flex-direction: column;
   padding-top: 10px;
 }
 
 .percentage {
-  color: #d5d6d8;
+  color: var(--stat-text);
   font-size: 20px;
   padding: 10px;
 }
