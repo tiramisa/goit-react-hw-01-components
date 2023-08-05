@@ -1,23 +1,23 @@
 import React from 'react';
-import { tableStyles, thStyles, tdStyles, transactionAllStyles } from './TransactionHistoryStyles';
+import styles from './TransactionHistoryStyles.module.css';
 
 const TransactionHistory = ({ items }) => {
   return (
-    <div style={transactionAllStyles}>
-      <table style={tableStyles}>
+    <div className={styles.transactionAllStyles}>
+      <table className={styles.tableStyles}>
         <thead>
           <tr>
-            <th style={thStyles}>Type</th>
-            <th style={thStyles}>Amount</th>
-            <th style={thStyles}>Currency</th>
+            <th className={styles.thStyles}>Type</th>
+            <th className={styles.thStyles}>Amount</th>
+            <th className={styles.thStyles}>Currency</th>
           </tr>
         </thead>
-        <tbody className="table">
+        <tbody className={styles.table}>
           {items.map((item, index) => (
             <tr key={index}>
-              <td style={tdStyles}>{item.type}</td>
-              <td style={tdStyles}>{item.amount}</td>
-              <td style={tdStyles}>{item.currency}</td>
+              <td className={styles.tdStyles}>{item.type}</td>
+              <td className={styles.tdStyles}>{item.amount}</td>
+              <td className={styles.tdStyles}>{item.currency}</td>
             </tr>
           ))}
         </tbody>
@@ -27,4 +27,5 @@ const TransactionHistory = ({ items }) => {
 };
 
 export default TransactionHistory;
+
 

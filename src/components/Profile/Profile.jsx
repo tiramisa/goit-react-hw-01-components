@@ -1,34 +1,34 @@
 import React from 'react';
-import './ProfileStyles.css'; 
+import styles from './ProfileStyles.module.css';
 
 const Profile = ({ username, tag, location, avatar, stats }) => {
   return (
-    <div className="ProfileWrapper">
-      <div className="ProfileDescription">
+    <div className={styles.ProfileWrapper}>
+      <div className={styles.ProfileDescription}>
         <img
           src={avatar}
           alt="User avatar"
-          className="Avatar"
+          className={styles.Avatar}
           width={100}
           height={100}
         />
-        <p className="Name">{username}</p>
-        <p className="Tag">@{tag}</p>
-        <p className="Location">{location}</p>
+        <p className={styles.Name}>{username}</p>
+        <p className={styles.Tag}>@{tag}</p>
+        <p className={styles.Location}>{location}</p>
       </div>
 
-      <ul className="StatsList">
-        <li className="StatItem">
+      <ul className={styles.StatsList}>
+        <li className={styles.StatItem}>
           <span>Followers</span>
-          <span className="Quantity">{stats.followers}</span>
+          <span className={styles.Quantity}>{stats.followers}</span>
         </li>
-        <li className="StatItem">
+        <li className={styles.StatItem}>
           <span>Views</span>
-          <span className="Quantity">{stats.views}</span>
+          <span className={styles.Quantity}>{stats.views}</span>
         </li>
-        <li className="StatItem">
+        <li className={styles.StatItem}>
           <span>Likes</span>
-          <span className="Quantity">{stats.likes}</span>
+          <span className={styles.Quantity}>{stats.likes}</span>
         </li>
       </ul>
     </div>
@@ -36,5 +36,6 @@ const Profile = ({ username, tag, location, avatar, stats }) => {
 };
 
 export default Profile;
+
 
 

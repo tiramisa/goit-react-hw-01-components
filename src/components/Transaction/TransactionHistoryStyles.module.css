@@ -1,0 +1,33 @@
+/* TransactionHistoryStyles.module.css */
+
+:root {
+  --box-shadow-default: 0 9px 10px rgba(0, 0, 9, 0.2), 9px 0 10px rgba(0, 0, 9, 0.2);
+  --background-default: #fdfde9;
+}
+
+.transactionAllStyles {
+  margin: 100px;
+  box-shadow: var(--box-shadow-default);
+}
+
+.table {
+  width: 500px;
+  border-collapse: collapse;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.thStyles {
+  color: #333;
+  padding: 12px;
+  font-size: 16px;
+  background-color: #96e0dd;
+}
+
+.tdStyles {
+  border: 1px solid #ddd;
+  padding: 12px;
+  font-size: 14px;
+  background-color: #96a0e0;
+}

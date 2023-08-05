@@ -7,7 +7,7 @@ import FriendList from './Friend/FriendList';
 import friends from '../data/friends.json';
 import TransactionHistory from './Transaction/TransactionHistory';
 import transactions from '../data/transactions.json';
-import 'modern-normalize';
+// import 'modern-normalize';
 
 
 const profileStyles = {

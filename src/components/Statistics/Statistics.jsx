@@ -1,19 +1,21 @@
 import React from 'react';
-import './StatisticsStyles.css';
+import styles from './StatisticsStyles.module.css';
 
 const GetStatistics = ({ title, stats }) => {
   return (
-    <div className="statistic-card">
-      {title && <h2 className="title">{title}</h2>}
+    <div className={styles['statistic-card']}>
+      {title && <h2 className={styles.title}>{title}</h2>}
 
-      <ul className="statistic-card__item">
+      <ul className={styles['statistic-card__item']}>
         {stats.map((stat, index) => (
           <div
             key={index}
-            className={`statistic-card__item statistic-card__item-color-${index + 1}`}
-          ><div className='stat-text'>
-            <span className="label">{stat.label}</span>
-            <span className="percentage">{stat.percentage}%</span></div>
+            className={`${styles['statistic-card__item']} ${styles[`statistic-card__item-color-${index + 1}`]}`}
+          >
+            <div className={styles['stat-text']}>
+              <span className={styles.label}>{stat.label}</span>
+              <span className={styles.percentage}>{stat.percentage}%</span>
+            </div>
           </div>
         ))}
       </ul>
@@ -22,3 +24,4 @@ const GetStatistics = ({ title, stats }) => {
 };
 
 export default GetStatistics;
+
